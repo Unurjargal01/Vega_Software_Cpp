@@ -1,4 +1,4 @@
-#include <benchmarks/benchmark.h>
+#include <benchmark/benchmark.h>
 #include "my_add.h"
 
 void Sum(int n) {
