@@ -1,0 +1,5 @@
+if(EXISTS "/home/wark90/C++/Vega/Vega_Software_Cpp/build/tests[1]_tests.cmake")
+  include("/home/wark90/C++/Vega/Vega_Software_Cpp/build/tests[1]_tests.cmake")
+else()
+  add_test(tests_NOT_BUILT tests_NOT_BUILT)
+endif()
