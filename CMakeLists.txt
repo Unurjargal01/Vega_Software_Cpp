@@ -25,7 +25,6 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(benchmark)
 
 find_package(benchmark REQUIRED)
-target_link_directories()
 
 # tests
 enable_testing()
