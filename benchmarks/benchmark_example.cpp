@@ -8,6 +8,6 @@ void Sum(int n) {
     }
 }
 
-BENCHMARK(BM_Sum)
+BENCHMARK(Sum)
 
 BENCHMARK_MAIN();
