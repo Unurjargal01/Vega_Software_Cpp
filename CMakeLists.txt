@@ -26,6 +26,8 @@ FetchContent_MakeAvailable(benchmark)
 
 find_package(benchmark REQUIRED)
 
+include_directories(${benchmark_SOURCE_DIR}/include)
+
 # tests
 enable_testing()
 add_executable(tests test_add.cpp src/my_add.cpp)
