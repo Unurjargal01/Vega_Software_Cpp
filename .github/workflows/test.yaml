@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get update && sudo apt-get install -y cmake
+      - run: sudo apt-get update && sudo apt-get install -y cmake libbenchmark-dev
       - run: rm -rf build
       - run: mkdir build && cmake -B build -S . && cmake --build build
       - uses: actions/upload-artifact@v4
@@ -14,6 +14,7 @@ jobs:
           path: |
             build/main
             build/tests
+            benchmark/build/benchmark_example
 
   tests:
     needs: build
@@ -32,3 +33,12 @@ jobs:
         with:
           name: binaries
       - run: chmod +x main && ./main 2 7
+
+  benchmark:
+    needs: build
+    runs-on: ubuntu-latest
+    stes:
+      - uses: actions/download-artifact@v4
+        with:
+          name:binaries
+      - run: chmod +x benchmark_example && ./benchmark_example
