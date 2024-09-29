@@ -12,9 +12,7 @@ jobs:
         with:
           name: binaries
           path: |
-            build/main
-            build/tests
-            benchmark/build/benchmark_example
+            build/*
 
   benchmark:
     needs: build
